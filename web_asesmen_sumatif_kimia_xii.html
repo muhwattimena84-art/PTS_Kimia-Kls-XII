@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Web Asesmen Sumatif Akhir Semester Kimia XII - SMAN 29 Maluku Tengah</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #2563eb;
+            --light-blue: #eff6ff;
+            --accent-green: #059669;
+            --accent-green-hover: #047857;
+            --warning-yellow: #d97706;
+            --danger-red: #dc2626;
+            --bg-neutral: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #cbd5e1;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-neutral);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-bottom: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 16px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 20px;
+            box-shadow: var(--shadow);
+            flex-shrink: 0;
+        }
+
+        .brand-text h1 {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .badge-offline {
+            background-color: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-offline::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .main-container {
+            max-width: 850px;
+            width: 100%;
+            margin: 16px auto;
+            padding: 0 16px;
+            flex: 1;
+        }
+
+        .view-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 20px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            transition: border-color 0.2s;
+            background-color: #fafafa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            background-color: #fff;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            width: 100%;
+            touch-action: manipulation;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-blue);
+            color: white;
+        }
+
+        .btn-primary:active {
+            background-color: var(--primary-blue);
+            transform: scale(0.98);
+        }
+
+        .btn-success {
+            background-color: var(--accent-green);
+            color: white;
+        }
+
+        .btn-success:active {
+            background-color: var(--accent-green-hover);
+            transform: scale(0.98);
+        }
+
+        .btn-warning {
+            background-color: var(--warning-yellow);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1.5px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:active {
+            background-color: var(--light-blue);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .exam-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--light-blue);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            margin-bottom: 20px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .timer-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--danger-red);
+            background: white;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .question-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #0f172a;
+            white-space: pre-line;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 16px;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+            background-color: white;
+        }
+
+        .option-item:active {
+            background-color: var(--light-blue);
+        }
+
+        .option-item.selected {
+            border-color: var(--secondary-blue);
+            background-color: var(--light-blue);
+            box-shadow: 0 0 0 1px var(--secondary-blue);
+        }
+
+        .option-key {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .option-item.selected .option-key {
+            background: var(--secondary-blue);
+            color: white;
+        }
+
+        .option-label {
+            font-size: 14px;
+            line-height: 1.5;
+            padding-top: 3px;
+            flex: 1;
+        }
+
+        .essay-input {
+            width: 100%;
+            min-height: 140px;
+            padding: 12px;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            line-height: 1.5;
+            resize: vertical;
+        }
+
+        .essay-input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .grid-btn {
+            padding: 10px 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            background: #f8fafc;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+        }
+
+        .grid-btn.active {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 2px var(--primary-blue);
+        }
+
+        .grid-btn.answered {
+            background-color: var(--accent-green);
+            color: white;
+            border-color: var(--accent-green);
+        }
+
+        .grid-btn.flagged {
+            background-color: var(--warning-yellow);
+            color: white;
+            border-color: var(--warning-yellow);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 16px;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+
+        .info-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .info-table td:first-child {
+            font-weight: 600;
+            width: 40%;
+            color: var(--text-muted);
+        }
+
+        .rubric-box {
+            background-color: #f1f5f9;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            color: #334155;
+            margin-top: 6px;
+            border-left: 3px solid var(--secondary-blue);
+        }
+
+        .alert-box {
+            padding: 12px;
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-warning {
+            background-color: #fffbeb;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+
+        .alert-danger {
+            background-color: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+
+        .teacher-floating-btn {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            z-index: 90;
+        }
+
+        /* Certificate Styles */
+        .certificate-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 6px double var(--primary-blue);
+            border-radius: var(--radius-lg);
+            padding: 26px 20px;
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .cert-badge-top {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--secondary-blue);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .cert-title {
+            color: var(--primary-blue);
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .cert-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .cert-student-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f172a;
+            border-bottom: 2px solid var(--secondary-blue);
+            display: inline-block;
+            padding: 0 16px 4px 16px;
+            margin: 6px 0 4px 0;
+        }
+
+        .cert-student-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .cert-score-badge {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            border-radius: 50%;
+            width: 88px;
+            height: 88px;
+            margin: 10px auto 4px auto;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            border: 3px solid #ffffff;
+        }
+
+        .cert-score-num {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .cert-score-lbl {
+            font-size: 9px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cert-predicate {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 12px;
+        }
+
+        .cert-motivation-box {
+            background: #ffffff;
+            border: 1.5px dashed #3b82f6;
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            margin: 14px 0;
+            font-size: 13px;
+            font-style: italic;
+            color: #1e293b;
+            line-height: 1.5;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .cert-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 11px;
+            text-align: left;
+        }
+
+        .cert-stamp {
+            display: inline-block;
+            border: 1.5px dashed var(--accent-green);
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+
+        @media print {
+            header, .teacher-floating-btn, .btn, .no-print, .nav-bar, .alert-box, .info-table, #student-score-box, .btn-group {
+                display: none !important;
+            }
+            body {
+                background: white;
+            }
+            .view-card {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+            .certificate-container {
+                box-shadow: none;
+                border: 6px double #1e3a8a !important;
+                margin: 0;
+                padding: 30px;
+            }
+        }
+
+        .nav-bar {
+            background-color: #0f172a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 74px;
+            z-index: 99;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 6px 12px;
+            gap: 6px;
+        }
+
+        .nav-link {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover, .nav-link:active {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link.active {
+            color: #ffffff;
+            background-color: var(--secondary-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-link-teacher {
+            margin-left: auto;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.1);
+        }
+
+        .nav-link-teacher:hover {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fef08a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="brand-info">
+                <div class="brand-logo">K</div>
+                <div class="brand-text">
+                    <h1>SMAN 29 Maluku Tengah</h1>
+                    <p>Asesmen Sumatif Kimia XII • Kurikulum Merdeka</p>
+                </div>
+            </div>
+            <div class="badge-offline">Mode Offline</div>
+        </div>
+    </header>
+
+    <nav class="nav-bar no-print">
+        <div class="nav-container">
+            <button class="nav-link active" data-target="view-home" onclick="switchView('view-home')">
+                🏠 Beranda
+            </button>
+            <button class="nav-link" data-target="view-identity" onclick="switchView('view-identity')">
+                👤 Identitas
+            </button>
+            <button class="nav-link" data-target="view-instructions" onclick="switchView('view-instructions')">
+                📋 Petunjuk
+            </button>
+            <button class="nav-link" data-target="view-exam" onclick="checkAndSwitchToExam()">
+                📝 Ujian
+            </button>
+            <button class="nav-link" data-target="view-result" onclick="checkAndSwitchToResult()">
+                📊 Hasil
+            </button>
+            <button class="nav-link nav-link-teacher" onclick="openTeacherAuthModal()">
+                🔒 Portal Guru
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-container">
+
+        <section id="view-home" class="view-card">
+            <h2>Beranda Asesmen Sumatif</h2>
+            
+            <table class="info-table">
+                <tr><td>Mata Pelajaran</td><td>Kimia</td></tr>
+                <tr><td>Kelas / Semester</td><td>XII / Ganjil</td></tr>
+                <tr><td>Satuan Pendidikan</td><td>SMA Negeri 29 Maluku Tengah</td></tr>
+                <tr><td>Guru Pengampu</td><td>Muh. Kasim Wattimena, S.Pd.</td></tr>
+                <tr><td>Jumlah Soal</td><td>25 Soal (20 PG + 5 Esai)</td></tr>
+                <tr><td>Durasi Alokasi</td><td><span id="home-duration-display">90</span> Menit</td></tr>
+            </table>
+
+            <div class="alert-box alert-warning">
+                📌 <b>Perhatian:</b> Ujian ini berjalan sepenuhnya secara offline tanpa koneksi internet. Pastikan daya baterai HP Anda mencukupi.
+            </div>
+
+            <button class="btn btn-primary" onclick="switchView('view-identity')">
+                MULAI APLIKASI UJIAN ➔
+            </button>
+        </section>
+
+        <section id="view-identity" class="view-card hidden">
+            <h2>Formulir Identitas Peserta Didik</h2>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                Isilah data diri Anda dengan teliti dan lengkap sebelum memasuki lembar petunjuk.
+            </p>
+
+            <form id="form-identity" onsubmit="event.preventDefault(); validateIdentity();">
+                <div class="form-group">
+                    <label for="student-name">Nama Lengkap Peserta Didik *</label>
+                    <input type="text" id="student-name" class="form-control" placeholder="Contoh: Ahmad Abdullah" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-class">Kelas / Peminatan *</label>
+                    <select id="student-class" class="form-control" required>
+                        <option value="">-- Pilih Kelas --</option>
+                        <option value="XII MIPA 1">XII MIPA 1</option>
+                        <option value="XII MIPA 2">XII MIPA 2</option>
+                        <option value="XII MIPA 3">XII MIPA 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-no">Nomor Ujian / Absen *</label>
+                    <input type="text" id="student-no" class="form-control" placeholder="Contoh: 12-029-001" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Mata Pelajaran</label>
+                    <input type="text" class="form-control" value="Kimia" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label>Semester / Tahun Pelajaran</label>
+                    <input type="text" class="form-control" value="Ganjil / 2026-2027" disabled>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline" onclick="switchView('view-home')">Kembali</button>
+                    <button type="submit" class="btn btn-primary">Lanjutkan ➔</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="view-instructions" class="view-card hidden">
+            <h2>Petunjuk Pelaksanaan Ujian</h2>
+            
+            <div style="font-size: 14px; line-height: 1.7; margin-bottom: 20px; color: #334155;">
+                <ol style="padding-left: 20px;">
+                    <li>Bacalah setiap butir soal dengan cermat dan teliti.</li>
+                    <li>Soal terdiri dari <b>20 Pilihan Ganda</b> (opsi A-E) dan <b>5 Soal Esai</b>.</li>
+                    <li>Setiap jawaban Anda akan tersimpan secara otomatis pada memori internal browser HP Anda.</li>
+                    <li>Anda dapat mengklik tombol <b>Ragu-Ragu</b> untuk menandai soal yang belum dipastikan.</li>
+                    <li>Dilarang berpindah tab browser atau membuka aplikasi lain selama ujian berlangsung. System akan merekam aktivitas pengerjaan Anda.</li>
+                    <li>Waktu akan terus berjalan hitung mundur setelah tombol tombol dimulai.</li>
+                    <li>Gunakan tombol navigasi atau peta nomor soal untuk berpindah antar nomor.</li>
+                </ol>
+            </div>
+
+            <div class="alert-box alert-danger" id="warning-resume" style="display:none;">
+                ⚠️ Sesia ujian sebelumnya terdeteksi! Mengklik tombol di bawah akan melanjutkan sisa waktu dan jawaban Anda yang telah tersimpan.
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-outline" onclick="switchView('view-identity')">Kembali</button>
+                <button class="btn btn-success" onclick="startExam()">SAYA SIAP MENGERJAKAN UJIAN 🚀</button>
+            </div>
+        </section>
+
+        <section id="view-exam" class="view-card hidden">
+            <!-- Top Exam Header: Timer & Status -->
+            <div class="exam-header">
+                <div>
+                    <span style="font-size: 12px; color: var(--text-muted); display: block;">Sisa Waktu Ujian</span>
+                    <div class="timer-box" id="exam-timer">
+                        ⏱️ <span id="timer-text">90:00</span>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    <span style="font-size: 12px; color: var(--text-muted); display: block;">Progres Dijawab</span>
+                    <strong id="progress-text" style="color: var(--secondary-blue); font-size: 15px;">0 / 25</strong>
+                </div>
+            </div>
+
+            <!-- Active Question Card Wrapper -->
+            <div id="question-card">
+                <div class="question-number" id="q-number-label">Soal Nomor 1</div>
+                <div class="question-text" id="q-text-body">Memuat pertanyaan...</div>
+                
+                <!-- Multiple Choice Container -->
+                <div id="mc-options-container" class="options-list"></div>
+
+                <!-- Essay Container -->
+                <div id="essay-container" class="hidden">
+                    <label style="font-size: 13px; font-weight: 600; margin-bottom: 6px; display: block;">Tuliskan Jawaban Esai Anda:</label>
+                    <textarea id="essay-response" class="essay-input" placeholder="Tuliskan jawaban penjelasan/perhitungan Anda di sini..." oninput="saveEssayAnswer()"></textarea>
+                </div>
+            </div>
+
+            <!-- Exam Control Navigation Buttons -->
+            <div class="btn-group" style="margin-top: 24px;">
+                <button class="btn btn-outline" id="btn-prev" onclick="navigateQuestion(-1)">⬅️ Sebelumnya</button>
+                <button class="btn btn-warning" id="btn-flag" onclick="toggleFlag()" style="width: auto;">🚩 Ragu</button>
+                <button class="btn btn-primary" id="btn-next" onclick="navigateQuestion(1)">Berikutnya ➡️</button>
+            </div>
+
+            <button class="btn btn-outline" style="margin-top: 12px; font-size: 13px;" onclick="toggleGridDrawer()">
+                📱 Buka / Tutup Navigasi Soal
+            </button>
+
+            <!-- Question Grid Drawer -->
+            <div id="grid-drawer" class="hidden" style="margin-top: 16px; border-top: 1px solid var(--border-color); padding-top: 12px;">
+                <span style="font-size: 12px; font-weight: 600; color: var(--text-muted);">PETA NOMOR SOAL:</span>
+                <div id="question-grid" class="nav-grid"></div>
+            </div>
+
+            <div style="margin-top: 28px; border-top: 2px dashed #e2e8f0; padding-top: 16px;">
+                <button class="btn btn-success" onclick="openConfirmationModal()">
+                    SELESAI DAN KUMPULKAN JAWABAN ✔️
+                </button>
+            </div>
+        </section>
+
+        <section id="view-confirm" class="view-card hidden">
+            <h2>Konfirmasi Pengumpulan Jawaban</h2>
+
+            <div class="alert-box alert-warning">
+                ⚠️ Anda akan mengakhiri sesi ujian ini. Harap periksa kembali rangkuman jawaban Anda berikut.
+            </div>
+
+            <table class="info-table">
+                <tr><td>Jumlah Soal Dijawab</td><td><strong id="conf-answered" style="color: var(--accent-green);">0</strong> / 25</td></tr>
+                <tr><td>Jumlah Soal Belum Dijawab</td><td><strong id="conf-unanswered" style="color: var(--danger-red);">25</strong> Soal</td></tr>
+                <tr><td>Soal Ditandai Ragu-Ragu</td><td><strong id="conf-flagged" style="color: var(--warning-yellow);">0</strong> Soal</td></tr>
+            </table>
+
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+                Apabila dikumpulkan, jawaban tidak dapat diubah kembali kecuali diberikan izin reset oleh guru.
+            </p>
+
+            <div class="btn-group">
+                <button class="btn btn-outline" onclick="switchView('view-exam')">Kembali Mengerjakan</button>
+                <button class="btn btn-success" onclick="submitExamFinal()">YA, KUMPULKAN SEKARANG</button>
+            </div>
+        </section>
+
+        <section id="view-result" class="view-card hidden">
+            <h2>Hasil Ujian & Sertifikat Asesmen</h2>
+
+            <div class="alert-box alert-warning" id="result-status-banner">
+                ✅ Jawaban Anda telah tersimpan secara aman di dalam perangkat HP ini.
+            </div>
+
+            <!-- Certificate Box Component -->
+            <div id="certificate-box" class="certificate-container">
+                <div class="cert-badge-top">SMA NEGERI 29 MALUKU TENGAH</div>
+                <div class="cert-title">SERTIFIKAT HASIL ASESMEN</div>
+                <div class="cert-sub">Asesmen Sumatif Akhir Semester • Mata Pelajaran Kimia Class XII</div>
+                
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 2px;">Diberikan kepada peserta didik:</p>
+                <div class="cert-student-name" id="cert-name">Nama Peserta Didik</div>
+                <div class="cert-student-meta">
+                    Kelas: <span id="cert-class">-</span> &nbsp;|&nbsp; No. Ujian: <span id="cert-no">-</span>
+                </div>
+
+                <p style="font-size: 12px; color: var(--text-muted);">Telah menyelesaikan pengerjaan soal dengan capaian nilai:</p>
+                
+                <div class="cert-score-badge">
+                    <span class="cert-score-num" id="cert-score-num">0</span>
+                    <span class="cert-score-lbl">Nilai Akhir</span>
+                </div>
+
+                <div class="cert-predicate" id="cert-predicate">Predikat: Sangat Memuaskan</div>
+
+                <div class="cert-motivation-box" id="cert-motivation-text">
+                    "Memuat kata motivasi..."
+                </div>
+
+                <div class="cert-footer">
+                    <div>
+                        <div class="cert-stamp">✔ TERVERIFIKASI SISTEM</div>
+                        <div><b>Tanggal Terbit:</b> <span id="cert-date">-</span></div>
+                        <div><b>Sistem Asesmen:</b> Mode Mandiri Offline</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin-bottom: 35px;">Guru Pengampu Mata Pelajaran,</p>
+                        <p><b><u>Muh. Kasim Wattimena, S.Pd.</u></b></p>
+                        <p style="color: var(--text-muted); font-size: 10px;">NIP. SMAN 29 Maluku Tengah</p>
+                    </div>
+                </div>
+            </div>
+
+            <table class="info-table">
+                <tr><td>Nama Peserta Didik</td><td><span id="res-name">-</span></td></tr>
+                <tr><td>Kelas / No. Ujian</td><td><span id="res-class">-</span> / <span id="res-no">-</span></td></tr>
+                <tr><td>Waktu Pengumpulan</td><td><span id="res-time">-</span></td></tr>
+                <tr><td>Status Penilaian</td><td><span id="res-eval-status">Tersimpan di Memori HP</span></td></tr>
+            </table>
+
+            <!-- Displayed Score Box if teacher enabled score display -->
+            <div id="student-score-box" class="hidden" style="background: var(--light-blue); border: 2px solid var(--secondary-blue); border-radius: var(--radius-md); padding: 16px; text-align: center; margin: 16px 0;">
+                <div style="font-size: 13px; color: var(--text-muted);">RINCIAN SKOR PILIHAN GANDA (PG)</div>
+                <div id="res-score-value" style="font-size: 36px; font-weight: 800; color: var(--primary-blue);">0</div>
+                <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Pilihan Ganda: <span id="res-pg-correct">0</span> / 20 Benar</div>
+            </div>
+
+            <div class="alert-box alert-warning">
+                📲 <b>Langkah Selanjutnya:</b> Unduh sertifikat atau berikan file ekspor hasil ujian kepada Bapak Muh. Kasim Wattimena, S.Pd.
+            </div>
+
+            <div class="btn-group" style="flex-direction: column;">
+                <button class="btn btn-success" onclick="downloadCertificateHTML()">
+                    📜 Unduh Sertifikat Peserta Didik (File Sertifikat)
+                </button>
+                <button class="btn btn-primary" onclick="window.print()">
+                    🖨️ Cetak / Simpan Sertifikat PDF
+                </button>
+                <button class="btn btn-outline" onclick="exportStudentBackupJSON()">
+                    📥 Unduh Backup Hasil Ujian (JSON)
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <button class="teacher-floating-btn no-print" onclick="openTeacherAuthModal()">
+        🔒 Portal Guru
+    </button>
+
+    <!-- Teacher Auth Modal -->
+    <div id="modal-teacher-auth" class="modal-overlay hidden">
+        <div class="modal-card">
+            <h2>Akses Portal Guru</h2>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Masukkan Kata Sandi Guru untuk Membuka Panel Kontrol Rekap Nilai:</p>
+            <div class="form-group">
+                <input type="password" id="teacher-pass" class="form-control" placeholder="Kata Sandi Guru (Default: guru123)">
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-outline" onclick="closeModal('modal-teacher-auth')">Batal</button>
+                <button class="btn btn-primary" onclick="verifyTeacherPass()">Masuk Portal Guru</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teacher Dashboard Modal -->
+    <div id="modal-teacher-panel" class="modal-overlay hidden">
+        <div class="modal-card" style="max-width: 750px;">
+            <h2>Panel Kontrol & Rekap Guru</h2>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">Guru Pengampu: Muh. Kasim Wattimena, S.Pd. | SMAN 29 Maluku Tengah</p>
+
+            <div style="display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto;" class="no-print">
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; width: auto;" onclick="showTeacherTab('tab-grading')">Penilaian Esai</button>
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; width: auto;" onclick="showTeacherTab('tab-settings')">Pengaturan & Bobot</button>
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; width: auto;" onclick="showTeacherTab('tab-export')">Rekap Data & Ekspor</button>
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; width: auto;" onclick="showTeacherTab('tab-guides')">Panduan Lengkap</button>
+            </div>
+
+            <!-- Tab 1: Essay Grading -->
+            <div id="tab-grading">
+                <h3 style="font-size: 15px; margin-bottom: 10px;">Pemeriksaan Soal Esai Peserta Didik</h3>
+                <div id="essay-grading-list">
+                    <!-- Populated dynamically -->
+                </div>
+                <button class="btn btn-success" style="margin-top: 12px;" onclick="saveEssayGrades()">Simpan Nilai Esai</button>
+            </div>
+
+            <!-- Tab 2: Settings -->
+            <div id="tab-settings" class="hidden">
+                <h3 style="font-size: 15px; margin-bottom: 10px;">Pengaturan Ujian & Bobot Penilaian</h3>
+                
+                <div class="form-group">
+                    <label>Durasi Ujian (Menit)</label>
+                    <input type="number" id="setting-duration" class="form-control" value="90">
+                </div>
+
+                <div class="form-group">
+                    <label>Tampilkan Nilai PG Langsung ke Siswa Setelah Selesai?</label>
+                    <select id="setting-show-score" class="form-control">
+                        <option value="true">Ya, Tampilkan Langsung</option>
+                        <option value="false">Tidak, Sembunyikan Dulu</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Bobot Nilai Pilihan Ganda (%)</label>
+                    <input type="number" id="setting-weight-pg" class="form-control" value="70">
+                </div>
+
+                <div class="form-group">
+                    <label>Bobot Nilai Esai (%)</label>
+                    <input type="number" id="setting-weight-essay" class="form-control" value="30">
+                </div>
+
+                <button class="btn btn-primary" onclick="saveTeacherSettings()">Simpan Pengaturan</button>
+            </div>
+
+            <!-- Tab 3: Rekap Data & Ekspor -->
+            <div id="tab-export" class="hidden">
+                <h3 style="font-size: 15px; margin-bottom: 10px;">Ekspor & Cetak Hasil Ujian</h3>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+                    Unduh rekap nilai untuk diolah di Microsoft Excel atau impor berkas jawaban siswa.
+                </p>
+                
+                <div class="btn-group" style="flex-direction: column;">
+                    <button class="btn btn-success" onclick="exportRecapCSV()">
+                        📊 Unduh Rekap Nilai CSV (Excel)
+                    </button>
+                    <button class="btn btn-warning" onclick="resetCurrentSession()">
+                        🔄 Reset Sesi Ujian (Hapus Sesi HP)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab 4: Guides -->
+            <div id="tab-guides" class="hidden" style="font-size: 13px; line-height: 1.6;">
+                <h3 style="font-size: 15px; margin-bottom: 8px;">Panduan Pengoperasian Offline</h3>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <b>1. Cara Menjalankan Tanpa Internet:</b><br>
+                    Cukup kirimkan file <code>index.html</code> ini ke HP peserta didik melalui WhatsApp / Bluetooth / USB Flashdisk. Buka file menggunakan Google Chrome / Safari HP.<br><br>
+                    <b>2. Mekanisme Pengumpulan Hasil:</b><br>
+                    Setelah selesai, siswa menekan "Unduh File Hasil Ujian (JSON)". File kecil tersebut diserahkan ke Guru via Bluetooth/WhatsApp saat berada di sekolah.<br><br>
+                    <b>3. Penguncian Jawaban:</b><br>
+                    Jawaban terkunci setelah disubmit dan tersimpan di penyimpanan internal HP (`localStorage`).
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; text-align: right;">
+                <button class="btn btn-outline" style="width: auto;" onclick="closeModal('modal-teacher-panel')">Tutup Panel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lock Screen Modal (Peringatan Keras & Kunci Otomatis) -->
+    <div id="modal-locked" class="modal-overlay hidden" style="z-index: 9999; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px);">
+        <div class="modal-card" style="border: 2px solid var(--danger-red); text-align: center; max-width: 500px;">
+            <div style="font-size: 50px; margin-bottom: 10px;">🚨</div>
+            <h2 style="color: var(--danger-red); border-bottom: 2px solid #fecaca; padding-bottom: 10px;">
+                UJIAN TERKUNCI OTOMATIS!
+            </h2>
+            <div class="alert-box alert-danger" style="text-align: left; margin-top: 15px; font-size: 13px; line-height: 1.6;">
+                <b>PERINGATAN KERAS KECURANGAN:</b><br>
+                Sistem mendeteksi Anda meninggalkan layar ujian (berpindah tab browser, membuka Google, atau membuka aplikasi lain) pada <span id="lock-timestamp" style="font-weight:bold;">-</span>.
+                <br><br>
+                Aktivitas ini dicatat sebagai <b>Indikasi Pelanggaran Ujian</b>. Layar pengerjaan Anda telah dikunci untuk menjaga integritas asesmen.
+            </div>
+
+            <div style="background: #f8fafc; border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md); margin-bottom: 16px; text-align: left; font-size: 13px;">
+                <div><b>Nama Peserta:</b> <span id="lock-student-name">-</span></div>
+                <div><b>Total Pelanggaran:</b> <span id="lock-violation-count" style="color: var(--danger-red); font-weight: bold;">1</span> kali</div>
+            </div>
+
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+                Minta <b>Bapak Muh. Kasim Wattimena, S.Pd.</b> untuk memasukkan Kode Buka Kunci Guru agar dapat melanjutkan ujian:
+            </p>
+
+            <div class="form-group">
+                <input type="password" id="unlock-pass-input" class="form-control" placeholder="PIN / Sandi Pembuka Kunci Guru" style="text-align: center; font-size: 16px; letter-spacing: 2px;">
+            </div>
+
+            <button class="btn btn-primary" style="background-color: var(--danger-red); border: none;" onclick="verifyUnlockPass()">
+                🔓 BUKA KUNCI UJIAN (OLEH GURU)
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const QUESTION_BANK = [
+            // 20 MULTIPLE CHOICE QUESTIONS (PG - HOTS & LITERASI)
+            {
+                id: 1,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Pengolahan Limbah Industri):\nLimbah cair industri pelapisan logam mengandung ion oksalat (C₂O₄²⁻) yang berbahaya bagi lingkungan pesisir. Sebelum dibuang, limbah dinetralkan menggunakan kalium permanganat (KMnO₄) dalam suasana asam. Persamaan reaksi redoks (belum setara):\nMnO₄⁻(aq) + C₂O₄²⁻(aq) → Mn²⁺(aq) + CO₂(g)\n\nPERTANYAAN:\nBerdasarkan perubahan bilangan oksidasi, jumlah elektron yang dilepaskan untuk mengoksidasi 1 mol ion oksalat (C₂O₄²⁻) menjadi gas CO₂ adalah...",
+                options: ["1 mol elektron", "2 mol elektron", "3 mol elektron", "5 mol elektron", "10 mol elektron"],
+                answer: 1, // B
+                explanation: "C₂O₄²⁻ (biloks C = +3) dioksidasi menjadi 2 CO₂ (biloks C = +4). Pelepasan elektron = 2 × (+4 - +3) = 2 mol elektron per mol C₂O₄²⁻."
+            },
+            {
+                id: 2,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Eksperimen Baterai Laut): \nTim peneliti di Maluku Tengah menguji potensi pasangan logam Seng (Zn) dan Tembaga (Cu) sebagai sumber energi sel Volta darurat menggunakan elektrolit air laut. \nData potensial reduksi standar:\nZn²⁺ + 2e⁻ → Zn (E° = -0.76 V)\nCu²⁺ + 2e⁻ → Cu (E° = +0.34 V)\n\nPERTANYAAN:\nBesar potensial standar sel (E°sel) yang dihasilkan dari pasangan elektroda tersebut adalah...",
+                options: ["-1.10 V", "-0.42 V", "+0.42 V", "+1.10 V", "+1.52 V"],
+                answer: 3, // D
+                explanation: "E°sel = E°katoda - E°anoda = +0.34 V - (-0.76 V) = +1.10 V."
+            },
+            {
+                id: 3,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Diagram Sel Kelautan):\nBerdasarkan data eksperimen energi sel Volta Seng-Tembaga pada soal nomor 2, para siswa diminta merancang notasi sel agar aliran elektron dari anoda ke katoda berlangsung secara spontan.\n\nPERTANYAAN:\nPenulisan diagram/notasi sel Volta yang tepat untuk menggambarkan reaksi spontan tersebut adalah...",
+                options: [
+                    "Cu(s) | Cu²⁺(aq) || Zn²⁺(aq) | Zn(s)",
+                    "Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s)",
+                    "Zn²⁺(aq) | Zn(s) || Cu(s) | Cu²⁺(aq)",
+                    "Cu²⁺(aq) | Cu(s) || Zn(s) | Zn²⁺(aq)",
+                    "Zn(s) | Cu²⁺(aq) || Zn²⁺(aq) | Cu(s)"
+                ],
+                answer: 1, // B
+                explanation: "Notasi sel spontan: Anoda (Oksidasi) || Katoda (Reduksi) → Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s)."
+            },
+            {
+                id: 4,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Produksi Disinfektan Nelayan):\nMasyarakat pesisir memanfaat pembuatan larutan disinfektan pembersih kapal melalui elektrolisis larutan NaCl terpekat menggunakan elektroda karbon (C) inert.\n\nPERTANYAAN:\nSpesi kimia yang mengalami reaksi reduksi di elektroda katoda selama proses elektrolisis adalah...",
+                options: ["Ion Na⁺", "Ion Cl⁻", "Molekul H₂O", "Gas O₂", "Elektroda Karbon"],
+                answer: 2, // C
+                explanation: "Di katoda larutan NaCl, molekul H₂O memiliki potensial reduksi lebih tinggi daripada ion Na⁺ (Golongan IA), sehingga H₂O terreduksi menjadi H₂ dan OH⁻."
+            },
+            {
+                id: 5,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Kerajinan Perak Banda Neira):\nPengrajin perhiasan perak di Banda Neira melakukan penyepuhan (electroplating) cincin perunggu dengan logam perak (Ag). Arus listrik sebesar 5 Ampere dialirkan ke dalam larutan AgNO₃ selama 965 detik (Ar Ag = 108, 1 F = 96500 C/mol).\n\nPERTANYAAN:\nBerdasarkan Hukum Faraday I, massa logam perak murni yang terendapkan pada permukaan cincin adalah...",
+                options: ["1.08 gram", "2.70 gram", "5.40 gram", "10.8 gram", "21.6 gram"],
+                answer: 2, // C
+                explanation: "W = (e × i × t) / 96500 = (108/1 × 5 × 965) / 96500 = 5.40 gram."
+            },
+            {
+                id: 6,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Perlindungan Baut Perahu motor):\nUntuk mencegah korosi cepat akibat paparan air laut yang agresif, baut besi perahu nelayan dilapisi dengan tembaga secara elektrolisis.\n\nPERTANYAAN:\nSusunan sel elektrolisis yang benar agar proses pelapisan tembaga pada baut berjalan optimal adalah...",
+                options: [
+                    "Baut besi di anoda, logam tembaga di katoda, larutan FeSO₄",
+                    "Baut besi di katoda, logam tembaga di anoda, larutan CuSO₄",
+                    "Baut besi di katoda, elektroda karbon di anoda, larutan NaCl",
+                    "Baut besi di anoda, elektroda platinum di katoda, larutan CuSO₄",
+                    "Baut besi dan tembaga diletakkan bersama di katoda"
+                ],
+                answer: 1, // B
+                explanation: "Objek yang dilapisi (baut besi) diletakkan di Katoda, logam pelapis (Cu) di Anoda, dipasangkan dengan larutan garam dari logam pelapis (CuSO₄)."
+            },
+            {
+                id: 7,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Korosi Lingkungan Pesisir):\nAtap seng dan konstruksi jembatan besi di wilayah pesisir Kepulauan Maluku mengalami perkaratan jauh lebih cepat dibandingkan wilayah pegunungan yang kering.\n\nPERTANYAAN:\nPenyebab utama memicu terjadinya reaksi redoks korosi pada besi di udara terbuka adalah...",
+                options: ["Gas nitrogen dan uap air", "Gas oksigen dan uap air", "Gas karbon dioksida saja", "Ion natrium dan klorida", "Cahaya matahari dan angin"],
+                answer: 1, // B
+                explanation: "Faktor utama penyebab korosi besi adalah kontak serentak dengan oksigen (O₂) dan air/kelembaban (H₂O)."
+            },
+            {
+                id: 8,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Proteksi Pipa Gas Dermaga):\nPipa besi bawah laut penyalur bahan bakar kapal dihubungkan dengan batang Magnesium (Mg) yang ditanam di dalam dasar laut untuk mencegah kebocoran pipa akibat karat.\n\nPERTANYAAN:\nMetode pencegahan korosi ini memanfaatkan prinsip...",
+                options: ["Galvanisasi", "Anodisasi", "Perlindungan Katodik (Anoda Korban)", "Pengecatan dasar", "Pelapisan timah"],
+                answer: 2, // C
+                explanation: "Metode Perlindungan Katodik (Anoda Korban): Logam Mg yang lebih reaktif teroksidasi terlebih dahulu untuk mengorbankan diri demi melindungi pipa besi."
+            },
+            {
+                id: 9,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Teknik Pengawetan Ikan Laut):\nNelayan lokal mencampurkan garam dapur ke dalam es batu untuk menjaga kesegaran ikan. Di laboratorium, siswa menguji sifat penurunan titik beku dengan melarutkan 18 gram glukosa (C₆H₁₂O₆, Mr = 180) ke dalam 500 gram air (Kf air = 1.86 °C/m).\n\nPERTANYAAN:\nPenurunan titik beku larutan glukosa (ΔTf) tersebut adalah...",
+                options: ["0.186 °C", "0.372 °C", "0.558 °C", "0.744 °C", "1.860 °C"],
+                answer: 1, // B
+                explanation: "Mol glukosa = 18/180 = 0.1 mol. Molalitas m = 0.1 / 0.5 kg = 0.2 m. ΔTf = m × Kf = 0.2 × 1.86 = 0.372 °C."
+            },
+            {
+                id: 10,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Tekanan Osmosis Sel Buah Pala):\nIndustri pengolahan pala di Banda memanfaat efek osmosis larutan gula pekat untuk menarik air dari dalam buah. Pada pengujian laboratorium, lima larutan diukur tekanan osmosisnya pada suhu sama.\n\nPERTANYAAN:\nLarutan yang memiliki nilai tekanan osmosis terbesar adalah...",
+                options: [
+                    "Larutan Glukosa 0.1 M (i = 1)",
+                    "Larutan Urea 0.2 M (i = 1)",
+                    "Larutan NaCl 0.1 M (i = 2)",
+                    "Larutan CaCl₂ 0.1 M (i = 3)",
+                    "Larutan Al₂(SO₄)₃ 0.1 M (i = 5)"
+                ],
+                answer: 4, // E
+                explanation: "Tekanan osmosis sebanding dengan konsentrasi partikel (M × i). Al₂(SO₄)₃ = 0.1 M × 5 ion = 0.5 M partikel (terbesar)."
+            },
+            {
+                id: 11,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Teknologi Pencairan Salju Global):\nDi negara-negara bermusim dingin, petugas pemeliharaan jalan menyebarkan garam dapur (NaCl) secara luas di atas permukaan jalan yang tertutup salju tebal.\n\nPERTANYAAN:\nFungsi utama penyebaran garam dapur tersebut berdasarkan prinsip sifat koligatif adalah...",
+                options: [
+                    "Menaikkan titik beku salju agar tidak mudah mencair",
+                    "Menurunkan titik beku sehingga es mencair pada suhu di bawah 0°C",
+                    "Menaikkan tekanan uap air pada lapisan es",
+                    "Menghentikan reaksi kimia pada permukaan es",
+                    "Menghasilkan panas eksotermik pembakaran"
+                ],
+                answer: 1, // B
+                explanation: "Penambahan garam menurunkan titik beku es/salju sehingga es mencair meskipun suhu lingkungan berada di bawah 0°C."
+            },
+            {
+                id: 12,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Analisis Partikel Larutan):\nHasil pengukuran laboratorium terhadap empat larutan non-elektrolit dengan jenis zat terlarut berbeda menunjukkan nilai penurunan tekanan uap yang persis sama.\n\nPERTANYAAN:\nHal ini membuktikan bahwa sifat koligatif larutan hanya bergantung pada...",
+                options: [
+                    "Jenis dan struktur molekul zat terlarut",
+                    "Jumlah partikel zat terlarut dalam larutan",
+                    "Warna dan kejernihan larutan",
+                    "Ukuran dan volume molekul terlarut",
+                    "Massa jenis pelarut murni"
+                ],
+                answer: 1, // B
+                explanation: "Sifat koligatif larutan hanya ditentukan oleh jumlah/konsentrasi partikel terlarut, bukan jenis zatnya."
+            },
+            {
+                id: 13,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Elektrolisis Seri Industri Logam):\nDua sel elektrolisis dihubungkan secara seri. Sel A berisi larutan AgNO₃ dan Sel B berisi larutan CuSO₄. Jika muatan listrik yang sama dialirkan ke dalam kedua sel tersebut.\n\nPERTANYAAN:\nPernyataan Hukum Faraday II yang tepat mengenai massa endapan yang dihasilkan adalah...",
+                options: [
+                    "Massa zat yang diendapkan berbanding terbalik dengan massa ekivalennya",
+                    "Massa zat yang diendapkan sebanding dengan massa ekivalennya (e = Ar/n)",
+                    "Massa zat yang diendapkan tidak bergantung pada jumlah muatan",
+                    "Volume gas yang dihasilkan selalu konstan pada kedua sel",
+                    "Massa endapan selalu sama tanpa mempedulikan jenis logam"
+                ],
+                answer: 1, // B
+                explanation: "Hukum Faraday II menyatakan W₁ / W₂ = e₁ / e₂ (massa endapan sebanding dengan massa ekivalen e)."
+            },
+            {
+                id: 14,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Pemurnian Tembaga Industri):\nPada pemurnian tembaga kotor (electrorefining), sel elektrolisis diisi dengan larutan CuSO₄ menggunakan tembaga kotor sebagai Anoda dan tembaga murni sebagai Katoda.\n\nPERTANYAAN:\nReaksi kimia yang berlangsung pada Anoda (elektroda aktif) adalah...",
+                options: [
+                    "Cu²⁺(aq) + 2e⁻ → Cu(s)",
+                    "2H₂O(l) → O₂(g) + 4H⁺(aq) + 4e⁻",
+                    "Cu(s) → Cu²⁺(aq) + 2e⁻",
+                    "SO₄²⁻(aq) → SO₂(g) + O₂(g)",
+                    "2H⁺(aq) + 2e⁻ → H₂(g)"
+                ],
+                answer: 2, // C
+                explanation: "Karena Anoda dibuat dari tembaga (elektroda aktif), maka logam tembaga itu sendiri yang teroksidasi menjadi ion Cu²⁺."
+            },
+            {
+                id: 15,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Aroma Minyak Atsiri Rempah):\nMinyak atsiri turunan tanaman lokal mengandung berbagai senyawa karbonil dan hidroksil. Dua sampel X dan Y memiliki rumus molekul C3H6O. Sampel X mereduksi pereaksi Fehling, sedangkan sampel Y tidak.\n\nPERTANYAAN:\nHubungan keisomeran antara sampel X (propanal/aldehid) dan Y (propanon/keton) adalah...",
+                options: [
+                    "Isomer rantai",
+                    "Isomer posisi",
+                    "Isomer fungsi",
+                    "Isomer geometri",
+                    "Isomer optik"
+                ],
+                answer: 2, // C
+                explanation: "Aldehid (Propanal) dan Keton (Propanon) memiliki rumus molekul sama (CnH₂ₙO) namun gugus fungsi berbeda, sehingga tergolong isomer fungsi."
+            },
+            {
+                id: 16,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Pemeraman Buah Lokal):\nPara petani buah pisang dan pala di Maluku Tengah mempercepat pematangan buah menggunakan gas karbit yang dihasilkan dari reaksi kalsium karbida (CaC₂) dengan air.\n\nPERTANYAAN:\nNama senyawa IUPAC dan rumus molekul dari gas karbit tersebut adalah...",
+                options: ["Metana (CH₄)", "Etana (C₂H₆)", "Etena (C₂H₄)", "Etuna / Asetilena (C₂H₂)", "Propana (C₃H₈)"],
+                answer: 3, // D
+                explanation: "CaC₂ + 2H₂O → Ca(OH)₂ + C₂H₂ (Etuna / Asetilena)."
+            },
+            {
+                id: 17,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Ekstraksi Garam Laut Halogen):\nProses pengolahan air laut dan rumput laut menghasilkan unsur Halogen (Golongan VIIA) berwujud padatan hitam keunguan yang mudah menyublim menjadi uap berwarna ungu bila dipanaskan.\n\nPERTANYAAN:\nUnsur halogen yang dimaksud adalah...",
+                options: ["Fluorin", "Klorin", "Bromin", "Iodin", "Astatin"],
+                answer: 3, // D
+                explanation: "Iodin (I₂) berwujud padat hitam-keunguan pada suhu kamar dan mudah menyublim."
+            },
+            {
+                id: 18,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Warna-Warni Batuan Mineral Maluku):\nKeragaman warna indah pada mineral batuan alam khas Maluku (seperti warna hijau tembaga, merah besi, dan ungu mangan) disebabkan oleh keberadaan unsur transisi periode keempat.\n\nPERTANYAAN:\nKarakteristik khas unsur transisi periode keempat yang menimbulkan variasi warna tersebut adalah...",
+                options: [
+                    "Semua orbital d terisi penuh elektron",
+                    "Subkulit d yang belum terisi penuh memungkinkan transisi elektron dan pembentukan ion kompleks",
+                    "Teksturnya sangat lunak dengan titik leleh rendah",
+                    "Bersifat tidak dapat ditarik oleh medan magnet",
+                    "Selalu bersifat inert dan tidak bereaksi"
+                ],
+                answer: 1, // B
+                explanation: "Unsubkulit d yang terisi parsial memungkinkan absorpsi gelombang cahaya tampak dan pembentukan warna ion kompleks."
+            },
+            {
+                id: 19,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Sifat Magnetik Ion Logam Transisi):\nPengujian interaksi ion logam transisi periode 4 terhadap medan magnet menunjukkan perbedaan dari paramagnetik hingga diamagnetik.\n\nPERTANYAAN:\nIon logam berikut yang bersifat diamagnetik (ditolak lemah oleh medan magnet karena seluruh elektron 3d terpasang penuh) adalah...",
+                options: ["Fe³⁺", "Cu²⁺", "Zn²⁺", "Mn²⁺", "Cr³⁺"],
+                answer: 2, // C
+                explanation: "Zn²⁺ memiliki konfigurasi [Ar] 3d¹⁰ (seluruh elektron pada subkulit 3d terpasang berpasangan), sehingga bersifat diamagnetik."
+            },
+            {
+                id: 20,
+                type: 'PG',
+                question: "STIMULUS LITERASI (Teknologi Polimer Sintetis):\nDalam pembuatan material sintesis tahan panas, Nilon 6,6 diproduksi melalui reaksi antara asam adipat dan heksametilendiamina dengan membebaskan molekul air.\n\nPERTANYAAN:\nPolimer yang terbentuk melalui mekanisme pelepasan molekul kecil seperti air ini tergolong ke dalam...",
+                options: ["Polimerisasi Adisi", "Polimerisasi Kondensasi", "Polimerisasi Koagulasi", "Polimerisasi Vulkanisasi", "Polimerisasi Substitusi"],
+                answer: 1, // B
+                explanation: "Polimerisasi kondensasi adalah penggabungan monomer yang disertai pelepasan molekul kecil (seperti H₂O atau HCl)."
+            },
+
+            // 5 ESSAY QUESTIONS (HOTS & LITERASI)
+            {
+                id: 21,
+                type: 'ESSAY',
+                question: "STIMULUS LITERASI (Penanganan Limbah Kimia Dikromat):\nLaporan analisis lingkungan mencatat adanya limbah ion dikromat (Cr₂O₇²⁻) yang toksik dari bekas cairan penguji. Limbah ini direduksi menggunakan ion besi(II) (Fe²⁺) dalam suasana asam sehingga menghasilkan ion chromium(III) (Cr³⁺) dan ion besi(III) (Fe³⁺).\n\nPERTANYAAN:\nSetarakan persamaan reaksi redoks berikut dengan metode setengah reaksi (suasana asam):\nCr₂O₇²⁻(aq) + Fe²⁺(aq) → Cr³⁺(aq) + Fe³⁺(aq)\nTuliskan tahapan setengah reaksi reduksi, setengah reaksi oksidasi, penyetaraan muatan, dan persamaan reaksi bersih tersetaranya secara sistematis!",
+                rubric: "Skor Maksimal 20:\n- Menuliskan setengah reaksi reduksi (Cr₂O₇²⁻ → 2Cr³⁺) & oksidasi (Fe²⁺ → Fe³⁺) (5 poin)\n- Penyetaraan O dengan H₂O dan H dengan H⁺ (5 poin)\n- Penyetaraan muatan dengan elektron (5 poin)\n- Hasil akhir setara: Cr₂O₇²⁻ + 6Fe²⁺ + 14H⁺ → 2Cr³⁺ + 6Fe³⁺ + 7H₂O (5 poin)"
+            },
+            {
+                id: 22,
+                type: 'ESSAY',
+                question: "STIMULUS LITERASI (Inovasi Sel Volta Kelautan):\nKelompok peneliti muda kimia merancang sel Volta dengan merangkai pelat Alumunium (Al) dalam larutan Al(NO₃)₃ dan pelat Nikel (Ni) dalam larutan NiSO₄.\nData potensial reduksi standar:\nAl³⁺ + 3e⁻ → Al (E° = -1.66 V)\nNi²⁺ + 2e⁻ → Ni (E° = -0.25 V)\n\nPERTANYAAN:\na. Tentukan elektroda yang bertindak sebagai Anoda dan Katoda!\nb. Tuliskan reaksi reduksi, reaksi oksidasi, dan reaksi sel bersihnya!\nc. Hitunglah nilai potensial sel standar (E°sel) yang dihasilkan!",
+                rubric: "Skor Maksimal 20:\na. Anoda = Al (E° lebih negatif), Katoda = Ni (5 poin)\nb. Reaksi Oksidasi: 2Al → 2Al³⁺ + 6e⁻ | Reduksi: 3Ni²⁺ + 6e⁻ → 3Ni | Reaksi Sel: 2Al + 3Ni²⁺ → 2Al³⁺ + 3Ni (7 poin)\nc. E°sel = E°katoda - E°anoda = -0.25 V - (-1.66 V) = +1.41 V (8 poin)"
+            },
+            {
+                id: 23,
+                type: 'ESSAY',
+                question: "STIMULUS LITERASI (Proteksi Pipa Bawah Laut Dermaga Maluku):\nPipa baja penyuplai bahan bakar minyak di dermaga pelabuhan Maluku Tengah tertanam di bawah tanah yang terhubung ke air laut. Untuk mencegah kebocoran akibat karat, insinyur menghubungkan pipa besi tersebut dengan lempengan Magnesium (Mg).\n\nPERTANYAAN:\nJelaskan prinsip kerja kimia dari sistem perlindungan katodik ini! Mengapa Magnesium (Mg) yang dipilih untuk melindungi besi (Fe), dan apa yang akan terjadi pada Magnesium seiring berjalannya waktu?",
+                rubric: "Skor Maksimal 20:\n- Menjelaskan Magnesium memiliki potensial reduksi lebih negatif dibanding besi (E° Mg < E° Fe) (8 poin)\n- Menjelaskan Mg bertindak sebagai Anoda Korban yang teroksidasi mendahului besi sehingga besi tetap terlindungi (8 poin)\n- Menjelaskan bahwa Mg akan terkikis habis seiring waktu dan harus diganti secara berkala (4 poin)"
+            },
+            {
+                id: 24,
+                type: 'ESSAY',
+                question: "STIMULUS LITERASI (Inovasi Pembuatan Es Krim Tradisional):\nDalam pembuatan es krim putar tradisional, pembuat es menambahkan garam dapur (NaCl) ke dalam bongkahan es batu agar suhu campuran es turun di bawah 0°C. \nDi laboratorium, siswa menguji larutan tersebut dengan melarutkan 11.7 gram NaCl (Mr = 58.5) ke dalam 250 gram air (Kb air = 0.52 °C/m). Asumsikan NaCl terionisasi sempurna (α = 1, i = 2).\n\nPERTANYAAN:\nHitunglah kenaikan titik didih larutan (ΔTb) tersebut lengkap dengan langkah penyelesaiannya!",
+                rubric: "Skor Maksimal 20:\n- Hitung Mol NaCl = 11.7 / 58.5 = 0.2 mol (4 poin)\n- Hitung Molalitas m = 0.2 mol / 0.25 kg = 0.8 m (4 poin)\n- Faktor van't Hoff i = 1 + (2-1)1 = 2 (4 poin)\n- Hitung ΔTb = m × Kb × i = 0.8 × 0.52 × 2 = 0.832 °C (8 poin)"
+            },
+            {
+                id: 25,
+                type: 'ESSAY',
+                question: "STIMULUS LITERASI (Riset Bahan Bakar Biobutanol):\nBiobutanol (C₄H₁₀O) merupakan salah satu kandidat bahan bakar nabati masa depan. Senyawa alkohol ini memiliki beberapa keisomeran struktur rantai dan posisi gugus fungsi -OH.\n\nPERTANYAAN:\nTuliskan rumus struktur kimia dan nama resmi IUPAC untuk 3 buah isomer alkohol dari rumus molekul C₄H₁₀O tersebut!",
+                rubric: "Skor Maksimal 20:\n- 1-butanol: CH₃-CH₂-CH₂-CH₂-OH (6.6 poin)\n- 2-butanol: CH₃-CH₂-CH(OH)-CH₃ (6.6 poin)\n- 2-metil-1-propanol / 2-metil-2-propanol: (CH₃)₂CH-CH₂-OH atau (CH₃)₃C-OH (6.8 poin)"
+            }
+        ];
+
+        let state = {
+            student: { name: '', class: '', no: '' },
+            answers: {}, // qId -> optionIndex or text
+            flags: {},   // qId -> boolean
+            currentIndex: 0,
+            timeLeft: 90 * 60, // seconds
+            timerInterval: null,
+            submitted: false,
+            securityViolations: 0,
+            isLocked: false,
+            lockTime: null,
+            settings: {
+                duration: 90,
+                showScore: true,
+                weightPG: 70,
+                weightEssay: 30
+            },
+            essayGrades: {} // qId -> score
+        };
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadPersistedState();
+            setupSecurityListeners();
+            renderQuestionGrid();
+        });
+
+        function loadPersistedState() {
+            const saved = localStorage.getItem('kimia_xii_assessment_state');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    state = { ...state, ...parsed };
+                    
+                    if (state.student.name) {
+                        document.getElementById('student-name').value = state.student.name;
+                        document.getElementById('student-class').value = state.student.class;
+                        document.getElementById('student-no').value = state.student.no;
+                    }
+
+                    if (state.submitted) {
+                        switchView('view-result');
+                        renderStudentResult();
+                    } else if (state.isLocked) {
+                        lockExam("Terdeteksi status terkunci dari sesi sebelumnya.");
+                    } else if (state.answers && Object.keys(state.answers).length > 0) {
+                        document.getElementById('warning-resume').style.display = 'block';
+                    }
+                } catch (e) {
+                    console.error("Gagal memuat simpanan lokal", e);
+                }
+            }
+        }
+
+        function saveStateToLocal() {
+            localStorage.setItem('kimia_xii_assessment_state', JSON.stringify(state));
+        }
+
+        function switchView(viewId) {
+            // Guard: If exam is locked, block any navigation and enforce lock screen
+            if (state.isLocked) {
+                lockExam("Layar ujian dalam keadaan terkunci.");
+                return;
+            }
+
+            // Confirmation alert if trying to navigate away from an active exam session
+            if (!state.submitted && state.timerInterval && viewId !== 'view-exam' && viewId !== 'view-confirm') {
+                if (!confirm("Ujian sedang berlangsung! Apakah Anda yakin ingin berpindah menu? Timer akan tetap berjalan.")) {
+                    return;
+                }
+            }
+
+            const views = ['view-home', 'view-identity', 'view-instructions', 'view-exam', 'view-confirm', 'view-result'];
+            views.forEach(v => {
+                const el = document.getElementById(v);
+                if (el) el.classList.add('hidden');
+            });
+
+            const target = document.getElementById(viewId);
+            if (target) target.classList.remove('hidden');
+
+            // Update active state in top navigation bar
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('data-target') === viewId) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+
+            window.scrollTo(0, 0);
+        }
+
+        function checkAndSwitchToExam() {
+            if (!state.student.name) {
+                alert("Silakan lengkapi Identitas Peserta Didik terlebih dahulu!");
+                switchView('view-identity');
+            } else if (!state.timerInterval && !state.submitted) {
+                switchView('view-instructions');
+            } else {
+                switchView('view-exam');
+            }
+        }
+
+        function checkAndSwitchToResult() {
+            if (!state.submitted) {
+                alert("Hasil ujian belum tersedia. Selesaikan dan kumpulkan ujian terlebih dahulu!");
+            } else {
+                switchView('view-result');
+            }
+        }
+
+        function validateIdentity() {
+            const name = document.getElementById('student-name').value.trim();
+            const sClass = document.getElementById('student-class').value;
+            const no = document.getElementById('student-no').value.trim();
+
+            if (!name || !sClass || !no) {
+                alert("Mohon lengkapi semua data formulir identitas!");
+                return;
+            }
+
+            state.student = { name, class: sClass, no };
+            saveStateToLocal();
+            switchView('view-instructions');
+        }
+
+        function startExam() {
+            switchView('view-exam');
+            renderActiveQuestion();
+            
+            if (!state.timerInterval) {
+                state.timerInterval = setInterval(() => {
+                    if (state.timeLeft > 0) {
+                        state.timeLeft--;
+                        updateTimerDisplay();
+                        if (state.timeLeft % 10 === 0) saveStateToLocal();
+                    } else {
+                        clearInterval(state.timerInterval);
+                        alert("Waktu pengerjaan ujian telah habis! Sistem akan mengumpulkan jawaban Anda secara otomatis.");
+                        submitExamFinal();
+                    }
+                }, 1000);
+            }
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(state.timeLeft / 60);
+            const secs = state.timeLeft % 60;
+            document.getElementById('timer-text').innerText = 
+                `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+        function renderActiveQuestion() {
+            const q = QUESTION_BANK[state.currentIndex];
+            document.getElementById('q-number-label').innerText = `Soal Nomor ${state.currentIndex + 1} dari 25 (${q.type})`;
+            document.getElementById('q-text-body').innerText = q.question;
+
+            const mcBox = document.getElementById('mc-options-container');
+            const essayBox = document.getElementById('essay-container');
+
+            if (q.type === 'PG') {
+                mcBox.classList.remove('hidden');
+                essayBox.classList.add('hidden');
+                mcBox.innerHTML = '';
+
+                const labels = ['A', 'B', 'C', 'D', 'E'];
+                q.options.forEach((opt, idx) => {
+                    const isSelected = state.answers[q.id] === idx;
+                    const div = document.createElement('div');
+                    div.className = `option-item ${isSelected ? 'selected' : ''}`;
+                    div.onclick = () => selectMcOption(q.id, idx);
+                    div.innerHTML = `
+                        <div class="option-key">${labels[idx]}</div>
+                        <div class="option-label">${opt}</div>
+                    `;
+                    mcBox.appendChild(div);
+                });
+            } else {
+                mcBox.classList.add('hidden');
+                essayBox.classList.remove('hidden');
+                const textInput = document.getElementById('essay-response');
+                textInput.value = state.answers[q.id] || '';
+            }
+
+            // Flag status update
+            const flagBtn = document.getElementById('btn-flag');
+            if (state.flags[q.id]) {
+                flagBtn.style.backgroundColor = 'var(--warning-yellow)';
+                flagBtn.innerText = '🚩 Ragu (Aktif)';
+            } else {
+                flagBtn.style.backgroundColor = '';
+                flagBtn.innerText = '🚩 Ragu';
+            }
+
+            // Navigation button disabled state
+            document.getElementById('btn-prev').disabled = state.currentIndex === 0;
+            document.getElementById('btn-next').disabled = state.currentIndex === QUESTION_BANK.length - 1;
+
+            updateProgressSummary();
+            renderQuestionGrid();
+        }
+
+        function selectMcOption(qId, optionIndex) {
+            state.answers[qId] = optionIndex;
+            saveStateToLocal();
+            renderActiveQuestion();
+        }
+
+        function saveEssayAnswer() {
+            const q = QUESTION_BANK[state.currentIndex];
+            const val = document.getElementById('essay-response').value;
+            state.answers[q.id] = val;
+            saveStateToLocal();
+            updateProgressSummary();
+            renderQuestionGrid();
+        }
+
+        function toggleFlag() {
+            const q = QUESTION_BANK[state.currentIndex];
+            state.flags[q.id] = !state.flags[q.id];
+            saveStateToLocal();
+            renderActiveQuestion();
+        }
+
+        function navigateQuestion(step) {
+            const target = state.currentIndex + step;
+            if (target >= 0 && target < QUESTION_BANK.length) {
+                state.currentIndex = target;
+                renderActiveQuestion();
+            }
+        }
+
+        function jumpToQuestion(idx) {
+            state.currentIndex = idx;
+            renderActiveQuestion();
+        }
+
+        function toggleGridDrawer() {
+            document.getElementById('grid-drawer').classList.toggle('hidden');
+        }
+
+        function renderQuestionGrid() {
+            const grid = document.getElementById('question-grid');
+            grid.innerHTML = '';
+
+            QUESTION_BANK.forEach((q, idx) => {
+                const btn = document.createElement('div');
+                btn.className = 'grid-btn';
+                btn.innerText = idx + 1;
+
+                if (idx === state.currentIndex) btn.classList.add('active');
+                if (state.flags[q.id]) {
+                    btn.classList.add('flagged');
+                } else if (state.answers[q.id] !== undefined && state.answers[q.id] !== '') {
+                    btn.classList.add('answered');
+                }
+
+                btn.onclick = () => jumpToQuestion(idx);
+                grid.appendChild(btn);
+            });
+        }
+
+        function updateProgressSummary() {
+            let answered = 0;
+            QUESTION_BANK.forEach(q => {
+                if (state.answers[q.id] !== undefined && state.answers[q.id] !== '') answered++;
+            });
+            document.getElementById('progress-text').innerText = `${answered} / 25`;
+        }
+
+        function openConfirmationModal() {
+            let answered = 0;
+            let flagged = 0;
+
+            QUESTION_BANK.forEach(q => {
+                if (state.answers[q.id] !== undefined && state.answers[q.id] !== '') answered++;
+                if (state.flags[q.id]) flagged++;
+            });
+
+            document.getElementById('conf-answered').innerText = answered;
+            document.getElementById('conf-unanswered').innerText = 25 - answered;
+            document.getElementById('conf-flagged').innerText = flagged;
+
+            switchView('view-confirm');
+        }
+
+        function submitExamFinal() {
+            if (state.timerInterval) clearInterval(state.timerInterval);
+            state.submitted = true;
+            state.submitTimestamp = new Date().toLocaleString('id-ID');
+            saveStateToLocal();
+            
+            switchView('view-result');
+            renderStudentResult();
+        }
+
+        function renderStudentResult() {
+            document.getElementById('res-name').innerText = state.student.name || '-';
+            document.getElementById('res-class').innerText = state.student.class || '-';
+            document.getElementById('res-no').innerText = state.student.no || '-';
+            document.getElementById('res-time').innerText = state.submitTimestamp || new Date().toLocaleString('id-ID');
+
+            // PG Scoring
+            let pgCorrect = 0;
+            QUESTION_BANK.filter(q => q.type === 'PG').forEach(q => {
+                if (state.answers[q.id] === q.answer) pgCorrect++;
+            });
+
+            const rawPgScore = (pgCorrect / 20) * 100;
+            
+            // Calculate total essay score if graded
+            let totalEssayScore = 0;
+            let essayGradedCount = 0;
+            Object.values(state.essayGrades).forEach(s => {
+                if (s !== undefined && s !== null) {
+                    totalEssayScore += parseFloat(s) || 0;
+                    essayGradedCount++;
+                }
+            });
+
+            // Calculate final total score
+            let finalScore = rawPgScore;
+            if (essayGradedCount > 0) {
+                finalScore = (rawPgScore * (state.settings.weightPG / 100)) + (totalEssayScore * (state.settings.weightEssay / 100));
+            }
+
+            const roundedScore = Math.round(finalScore);
+
+            document.getElementById('res-pg-correct').innerText = pgCorrect;
+            document.getElementById('res-score-value').innerText = rawPgScore.toFixed(0);
+
+            // Populate Certificate Elements
+            document.getElementById('cert-name').innerText = state.student.name || 'Peserta Didik';
+            document.getElementById('cert-class').innerText = state.student.class || '-';
+            document.getElementById('cert-no').innerText = state.student.no || '-';
+            document.getElementById('cert-score-num').innerText = roundedScore;
+            document.getElementById('cert-date').innerText = state.submitTimestamp || new Date().toLocaleDateString('id-ID');
+
+            // Predicate & Motivation Logic
+            let predicate = "";
+            let motivation = "";
+
+            if (roundedScore >= 85) {
+                predicate = "Predikat: Sangat Memuaskan (A)";
+                motivation = "🏆 Luar biasa! Hasil yang sangat membanggakan. Pertahankan semangat juang dan kehausan akan ilmu Kimia ini. Tingkatkan terus minat dan bakatmu untuk meraih cita-cita setinggi langit!";
+            } else if (roundedScore >= 70) {
+                predicate = "Predikat: Baik (B)";
+                motivation = "🌟 Kerja bagus! Pemahaman materi Kimia Anda sudah sangat baik. Dengan sedikit lebih banyak latihan dan ketelitian, Anda pasti mampu mencapai nilai sempurna di masa mendatang!";
+            } else if (roundedScore >= 55) {
+                predicate = "Predikat: Cukup (C)";
+                motivation = "👍 Usaha yang baik! Tetap semangat dan jangan berkecil hati. Jadikan hasil ini sebagai batu loncatan untuk belajar lebih giat lagi. Terus berlatih dan tanyakan materi yang belum dipahami!";
+            } else {
+                predicate = "Predikat: Perlu Bimbingan (D)";
+                motivation = "💪 Jangan pernah menyerah! Setiap proses pengerjaan adalah pengalaman berharga. Tetap optimistis, ulangi mempelajari bab-bab utama Kimia, dan berdiskusilah dengan guru serta teman-temanmu!";
+            }
+
+            document.getElementById('cert-predicate').innerText = predicate;
+            document.getElementById('cert-motivation-text').innerText = `"${motivation}"`;
+
+            if (state.settings.showScore) {
+                document.getElementById('student-score-box').classList.remove('hidden');
+            } else {
+                document.getElementById('student-score-box').classList.add('hidden');
+            }
+        }
+
+        function downloadCertificateHTML() {
+            const certElement = document.getElementById('certificate-box');
+            if (!certElement) return;
+
+            const name = state.student.name || 'Siswa';
+            const htmlContent = `
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikat Kimia - ${name}</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; padding: 20px; display: flex; justify-content: center; }
+        .certificate-container { background: #ffffff; border: 6px double #1e3a8a; border-radius: 16px; padding: 30px 24px; text-align: center; max-width: 650px; width: 100%; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .cert-badge-top { font-size: 11px; font-weight: 700; color: #2563eb; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+        .cert-title { color: #1e3a8a; font-size: 22px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .cert-sub { font-size: 12px; color: #64748b; margin-bottom: 20px; }
+        .cert-student-name { font-size: 24px; font-weight: 800; color: #0f172a; border-bottom: 2px solid #2563eb; display: inline-block; padding: 0 16px 4px 16px; margin: 6px 0; }
+        .cert-student-meta { font-size: 13px; color: #64748b; margin-bottom: 16px; }
+        .cert-score-badge { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 50%; width: 90px; height: 90px; margin: 12px auto; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); border: 3px solid #ffffff; }
+        .cert-score-num { font-size: 30px; font-weight: 800; line-height: 1; }
+        .cert-score-lbl { font-size: 9px; opacity: 0.9; text-transform: uppercase; }
+        .cert-predicate { font-size: 14px; font-weight: 700; color: #059669; margin-bottom: 14px; }
+        .cert-motivation-box { background: #eff6ff; border: 1.5px dashed #3b82f6; border-radius: 10px; padding: 14px 18px; margin: 16px 0; font-size: 13px; font-style: italic; color: #1e293b; line-height: 1.5; }
+        .cert-footer { display: flex; justify-content: space-between; align-align: flex-end; margin-top: 24px; padding-top: 14px; border-top: 1px solid #e2e8f0; font-size: 11px; text-align: left; }
+        .cert-stamp { border: 1.5px dashed #059669; color: #059669; font-weight: 700; font-size: 10px; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+    ${certElement.outerHTML}
+</body>
+</html>`;
+
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `Sertifikat_Kimia_${name.replace(/\s+/g, '_')}.html`;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        }
+
+        function setupSecurityListeners() {
+            window.addEventListener('beforeunload', (e) => {
+                if (!state.submitted && state.student.name) {
+                    e.preventDefault();
+                    e.returnValue = 'Ujian Anda sedang berlangsung. Apakah Anda yakin ingin keluar?';
+                }
+            });
+
+            // Trigger Lock Exam automatically when switching tabs or apps
+            const handleVisibilityOrBlur = () => {
+                if (!state.submitted && state.student.name && state.timerInterval && !state.isLocked) {
+                    lockExam("Terdeteksi berpindah tab/aplikasi lain.");
+                }
+            };
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') {
+                    handleVisibilityOrBlur();
+                }
+            });
+
+            window.addEventListener('blur', () => {
+                handleVisibilityOrBlur();
+            });
+        }
+
+        function lockExam(reason) {
+            state.isLocked = true;
+            state.securityViolations = (state.securityViolations || 0) + 1;
+            if (!state.lockTime) {
+                state.lockTime = new Date().toLocaleTimeString('id-ID');
+            }
+
+            saveStateToLocal();
+
+            // Populate Lock Modal
+            document.getElementById('lock-student-name').innerText = state.student.name || 'Peserta';
+            document.getElementById('lock-timestamp').innerText = state.lockTime;
+            document.getElementById('lock-violation-count').innerText = state.securityViolations;
+            document.getElementById('unlock-pass-input').value = '';
+
+            document.getElementById('modal-locked').classList.remove('hidden');
+        }
+
+        function verifyUnlockPass() {
+            const pass = document.getElementById('unlock-pass-input').value;
+            if (pass === 'guru123' || pass === 'admin') {
+                state.isLocked = false;
+                state.lockTime = null;
+                saveStateToLocal();
+                
+                document.getElementById('modal-locked').classList.add('hidden');
+                alert("Layar ujian berhasil dibuka oleh Guru. Silakan lanjutkan pengerjaan soal dengan jujur.");
+            } else {
+                alert("Sandi Pembuka Kunci Guru Salah! Silakan panggil Bapak Muh. Kasim Wattimena, S.Pd.");
+            }
+        }
+
+        function openTeacherAuthModal() {
+            document.getElementById('teacher-pass').value = '';
+            document.getElementById('modal-teacher-auth').classList.remove('hidden');
+        }
+
+        function verifyTeacherPass() {
+            const pass = document.getElementById('teacher-pass').value;
+            if (pass === 'guru123' || pass === 'admin') {
+                closeModal('modal-teacher-auth');
+                document.getElementById('modal-teacher-panel').classList.remove('hidden');
+                renderTeacherGradingTab();
+            } else {
+                alert('Sandi Guru Salah! Gunakan sandi default "guru123".');
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function showTeacherTab(tabId) {
+            ['tab-grading', 'tab-settings', 'tab-export', 'tab-guides'].forEach(t => {
+                document.getElementById(t).classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+            if (tabId === 'tab-grading') {
+                renderTeacherGradingTab();
+            }
+        }
+
+        function renderTeacherGradingTab() {
+            const container = document.getElementById('essay-grading-list');
+            container.innerHTML = '';
+
+            const essayQs = QUESTION_BANK.filter(q => q.type === 'ESSAY');
+            essayQs.forEach(q => {
+                const studentAns = state.answers[q.id] || '<i>Tidak diisi peserta didik</i>';
+                const currentScore = state.essayGrades[q.id] || 0;
+
+                const card = document.createElement('div');
+                card.style.background = '#f8fafc';
+                card.style.padding = '12px';
+                card.style.borderRadius = '8px';
+                card.style.marginBottom = '12px';
+                card.style.border = '1px solid #cbd5e1';
+
+                card.innerHTML = `
+                    <strong style="color: var(--secondary-blue);">Soal ${q.id}:</strong> ${q.question}
+                    <div style="margin: 8px 0; background: white; padding: 8px; border-radius: 4px; border: 1px dashed #cbd5e1; font-size: 13px;">
+                        <b>Jawaban Siswa:</b><br>${studentAns}
+                    </div>
+                    <div class="rubric-box"><b>Pedoman Penskoran Guru:</b><br>${q.rubric.replace(/\n/g, '<br>')}</div>
+                    <div style="margin-top: 8px; display: flex; align-items: center; gap: 10px;">
+                        <label style="font-size: 12px; font-weight: 600;">Skor Guru (0 - 20):</label>
+                        <input type="number" min="0" max="20" class="form-control" style="width: 80px; padding: 6px;" value="${currentScore}" onchange="state.essayGrades[${q.id}] = parseFloat(this.value)">
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function saveEssayGrades() {
+            saveStateToLocal();
+            alert("Nilai esai berhasil disimpan!");
+        }
+
+        function saveTeacherSettings() {
+            state.settings.duration = parseInt(document.getElementById('setting-duration').value) || 90;
+            state.settings.showScore = document.getElementById('setting-show-score').value === 'true';
+            state.settings.weightPG = parseFloat(document.getElementById('setting-weight-pg').value) || 70;
+            state.settings.weightEssay = parseFloat(document.getElementById('setting-weight-essay').value) || 30;
+            
+            document.getElementById('home-duration-display').innerText = state.settings.duration;
+            saveStateToLocal();
+            alert("Pengaturan guru berhasil diperbarui!");
+        }
+
+        function exportStudentBackupJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+            const dlAnchor = document.createElement('a');
+            dlAnchor.setAttribute("href", dataStr);
+            dlAnchor.setAttribute("download", `Hasil_Kimia_${state.student.name.replace(/\s+/g, '_') || 'Siswa'}.json`);
+            document.body.appendChild(dlAnchor);
+            dlAnchor.click();
+            dlAnchor.remove();
+        }
+
+        function exportRecapCSV() {
+            let pgCorrect = 0;
+            QUESTION_BANK.filter(q => q.type === 'PG').forEach(q => {
+                if (state.answers[q.id] === q.answer) pgCorrect++;
+            });
+            const pgScore = (pgCorrect / 20) * 100;
+
+            let totalEssayScore = 0;
+            Object.values(state.essayGrades).forEach(s => totalEssayScore += (s || 0)); // Max 100
+
+            const finalScore = (pgScore * (state.settings.weightPG / 100)) + (totalEssayScore * (state.settings.weightEssay / 100));
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Nama Lengkap,Kelas,No Ujian,Waktu Selesai,Benar PG,Nilai PG,Nilai Esai,Nilai Akhir Total\n";
+            csvContent += `"${state.student.name || '-'}","${state.student.class || '-'}","${state.student.no || '-'}","${state.submitTimestamp || '-'}","${pgCorrect}/20","${pgScore.toFixed(1)}","${totalEssayScore}","${finalScore.toFixed(1)}"\n`;
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `Rekap_Nilai_Kimia_XII_${state.student.class || 'SMAN29'}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        }
+
+        function resetCurrentSession() {
+            if (confirm("Apakah Anda yakin ingin menghapus seluruh data sesi di HP ini dan memulai dari awal?")) {
+                localStorage.removeItem('kimia_xii_assessment_state');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
